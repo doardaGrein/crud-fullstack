@@ -1,0 +1,21 @@
+### listar
+GET http://localhost:8080/api/inventories/products/list
+Content-Type: application/json
+
+### detalhar
+GET http://localhost:8080/api/inventories/products/details/{id}
+Content-Type: application/json
+
+
+### cadastrar
+POST http://localhost:8080/api/inventories/products/form
+Content-Type: application/json
+
+
+### atualizar
+PUT http://localhost:8080/api/inventories/products/{id}
+Content-Type: application/json
+
+### excluir
+DELETE http://localhost:8080/api/inventories/products/{id}
+Content-Type: application/json

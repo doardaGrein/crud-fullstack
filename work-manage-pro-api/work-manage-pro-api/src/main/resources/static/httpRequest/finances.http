@@ -1,0 +1,7 @@
+### accounting
+GET http://localhost:8080/api/finances
+Content-Type: application/json
+
+### accounting
+GET http://localhost:8080/api/finances/accounting
+Content-Type: application/json

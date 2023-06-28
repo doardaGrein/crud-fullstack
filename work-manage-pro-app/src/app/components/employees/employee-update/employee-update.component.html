@@ -1,0 +1,72 @@
+<div class="container">
+  <h2>
+    {{ i18nService.getTranslation('updateEmployee') }}
+  </h2>
+
+  <form (ngSubmit)="onSubmit()" #employeeForm="ngForm">
+    <div class="row">
+      <div class="col-sm-12 col-md-6">
+        <div class="form-group">
+          <label for="name">{{ i18nService.getTranslation('name') }}:</label>
+          <input type="text" id="name" name="name" required
+            placeholder="Enter your name" class="form-control"
+            [(ngModel)]="employee.name" #name="ngModel" aria-required="true">
+        </div>
+
+        <div class="form-group">
+          <label for="email">{{ i18nService.getTranslation('email') }}:</label>
+          <input type="email" id="email" name="email" required
+            placeholder="Enter your email address" class="form-control"
+            [(ngModel)]="employee.email" #email="ngModel" aria-required="true" email>
+        </div>
+
+        <div class="form-group">
+          <label for="department">{{ i18nService.getTranslation('department') }}:</label>
+          <input type="text" id="department" name="department" required
+            class="form-control"
+            [placeholder]="departmentPlaceholder"
+            [(ngModel)]="employee.department" #department="ngModel" aria-required="true">
+        </div>
+      </div>
+
+      <div class="col-sm-12 col-md-6">
+        <div class="form-group">
+          <label for="position">{{ i18nService.getTranslation('position') }}:</label>
+          <input type="text" id="position" name="position" required
+            placeholder="Enter your position (ex: analyst)" class="form-control"
+            [(ngModel)]="employee.position" #position="ngModel" aria-required="true">
+        </div>
+
+        <div class="form-group">
+          <label for="salary">{{ i18nService.getTranslation('salary') }}:</label>
+          <input type="number" id="salary" name="salary" required
+            placeholder="Enter your salary" class="form-control"
+            [(ngModel)]="employee.salary" #salary="ngModel" aria-required="true">
+        </div>
+
+        <div class="form-group">
+          <label for="age">{{ i18nService.getTranslation('age') }}:</label>
+          <input type="number" id="age" name="age" required
+            class="form-control"
+            [(ngModel)]="employee.age" #age="ngModel" aria-required="true">
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-12">
+        <button type="submit" [disabled]="!employeeForm.form.valid || !isEditable" class="btn btn-info">
+          {{ i18nService.getTranslation('save') }}
+        </button>
+
+        <button (click)="goToList()" class="btn btn-secondary">
+          {{ i18nService.getTranslation('back') }}
+        </button>
+
+        <button (click)="deactivateEmployee()" class="btn btn-danger" *ngIf="isEditable">
+          {{ i18nService.getTranslation('deactive') }}
+        </button>
+      </div>
+    </div>
+  </form>
+</div>

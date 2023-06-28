@@ -1,0 +1,21 @@
+### listar
+GET http://localhost:8080/api/suppliers/list
+Content-Type: application/json
+
+### detalhar
+GET http://localhost:8080/api/suppliers/details/{id}
+Content-Type: application/json
+
+
+### cadastrar
+POST http://localhost:8080/api/suppliers/form
+Content-Type: application/json
+
+
+### atualizar
+PUT http://localhost:8080/api/suppliers/{id}
+Content-Type: application/json
+
+### excluir
+DELETE http://localhost:8080/api/suppliers/{id}
+Content-Type: application/json

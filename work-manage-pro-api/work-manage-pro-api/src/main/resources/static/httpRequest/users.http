@@ -1,0 +1,19 @@
+### cadastrar
+POST http://localhost:8080/api/users
+Content-Type: application/json
+
+{
+  "name": "Juliane",
+  "email": "julianemaran@gmail.com",
+  "password": "12345678"
+}
+
+### alterar senha
+POST http://localhost:8080/api/users/change-password
+Content-Type: application/json
+
+{
+  "email": "julianemaran@gmail.com",
+  "oldPassword": "12345678",
+  "newPassword": "58741236"
+}

@@ -1,0 +1,43 @@
+<div class="table-responsive">
+  <table class="table" aria-label="employee-list" role="grid">
+    <caption>
+      {{ i18nService.getTranslation('listOfEmployees') }}
+    </caption>
+    <thead>
+      <tr>
+        <th scope="col">
+          {{ i18nService.getTranslation('name') }}
+        </th>
+        <th scope="col">
+          {{ i18nService.getTranslation('email') }}
+        </th>
+        <th scope="col">
+          {{ i18nService.getTranslation('department') }}
+        </th>
+        <th scope="col">
+          {{ i18nService.getTranslation('position') }}
+        </th>
+        <th scope="col">
+          {{ i18nService.getTranslation('active') }}
+        </th>
+        <th scope="col"></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let employee of employees" role="row">
+        <td role="cell">{{ employee.name }}</td>
+        <td role="cell">{{ employee.email }}</td>
+        <td role="cell">{{ employee.department }}</td>
+        <td role="cell">{{ employee.position }}</td>
+        <td role="cell">
+          {{ i18nService.getTranslation( employee.active ? 'active' : 'deactive' ) }}
+        </td>
+        <td role="cell">
+          <button class="btn btn-link" (click)="showDetails(employee)">
+            <i class="fas fa-info-circle"></i>
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

@@ -1,0 +1,30 @@
+### listar
+GET http://localhost:8080/api/employees/list
+Content-Type: application/json
+
+### detalhar
+GET http://localhost:8080/api/employees/details/{id}
+Content-Type: application/json
+
+
+### cadastrar
+POST http://localhost:8080/api/employees/form
+Content-Type: application/json
+
+{
+  "name": "John Doe",
+  "email": "johndoe@example.com",
+  "department": "Sales",
+  "hireDate": "2023-06-27T10:00:00",
+  "salary": 5000.00,
+  "age": 30,
+  "position": "Manager"
+}
+
+### atualizar
+PUT http://localhost:8080/api/employees/{id}
+Content-Type: application/json
+
+### excluir
+DELETE http://localhost:8080/api/employees/{id}
+Content-Type: application/json
