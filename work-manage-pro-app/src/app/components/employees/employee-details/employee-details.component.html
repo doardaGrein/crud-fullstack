@@ -1,57 +1,61 @@
-<div class="container">
-  <h2>
-    {{ i18nService.getTranslation('employeesDetails') }}
-  </h2>
+<div class="container-fluid">
+  <div class="row mt-lg-5">
+    <div class="container main-content mt-lg-5">
+      <h2>
+        {{ i18nService.getTranslation('employeesDetails') }}
+      </h2>
 
-  <div *ngIf="employee" class="row">
-    <div class="col-sm-12 col-md-6">
-      <p>
-        <strong>{{ i18nService.getTranslation('name') }}:</strong>
-        <span class="employee-detail">{{ employee.name }}</span>
-      </p>
-      <p>
-        <strong>{{ i18nService.getTranslation('email') }}:</strong>
-        <span class="employee-detail">{{ employee.email }}</span>
-      </p>
-      <p>
-        <strong>{{ i18nService.getTranslation('department') }}:</strong>
-        <span class="employee-detail">{{ employee.department }}</span>
-      </p>
-      <p>
-        <strong>{{ i18nService.getTranslation('position') }}: </strong>
-        <span class="employee-detail">{{ employee.position }}</span>
-      </p>
-    </div>
-    <div class="col-sm-12 col-md-6">
-      <p>
-        <strong>{{ i18nService.getTranslation('salary') }}: </strong>
-        <span class="employee-detail">R$ {{ employee.salary }}</span>
-      </p>
-      <p>
-        <strong>{{ i18nService.getTranslation('age') }}: </strong>
-        <span class="employee-detail">{{ employee.age }}</span>
-      </p>
-      <p>
-        <strong>{{ i18nService.getTranslation('active') }}: </strong>
-        <span class="employee-detail">
+      <div *ngIf="employee" class="row">
+        <div class="col-sm-12 col-md-6">
+          <p>
+            <strong>{{ i18nService.getTranslation('name') }}:</strong>
+            <span class="employee-detail">{{ employee.name }}</span>
+          </p>
+          <p>
+            <strong>{{ i18nService.getTranslation('email') }}:</strong>
+            <span class="employee-detail">{{ employee.email }}</span>
+          </p>
+          <p>
+            <strong>{{ i18nService.getTranslation('department') }}:</strong>
+            <span class="employee-detail">{{ employee.department }}</span>
+          </p>
+          <p>
+            <strong>{{ i18nService.getTranslation('position') }}: </strong>
+            <span class="employee-detail">{{ employee.position }}</span>
+          </p>
+        </div>
+        <div class="col-sm-12 col-md-6">
+          <p>
+            <strong>{{ i18nService.getTranslation('salary') }}: </strong>
+            <span class="employee-detail">R$ {{ employee.salary }}</span>
+          </p>
+          <p>
+            <strong>{{ i18nService.getTranslation('age') }}: </strong>
+            <span class="employee-detail">{{ employee.age }}</span>
+          </p>
+          <p>
+            <strong>{{ i18nService.getTranslation('active') }}: </strong>
+            <span class="employee-detail">
           {{ employee.active ? 'ativo' : 'inativo' }}
         </span>
-      </p>
-      <button (click)="editEmployee()" class="btn btn-primary">
-        {{ i18nService.getTranslation('edit') }}
-      </button>
-      <button (click)="goToList()" class="btn btn-secondary">
-        {{ i18nService.getTranslation('back') }}
-      </button>
-      <button (click)="toggleEmployeeStatus()" class="btn btn-primary">
-        {{ employee.active ? 'deactivate' : 'activate' }}
-      </button>
-    </div>
-  </div>
+          </p>
+          <button (click)="editEmployee()" class="btn btn-primary">
+            {{ i18nService.getTranslation('edit') }}
+          </button>
+          <button (click)="goToList()" class="btn btn-secondary">
+            {{ i18nService.getTranslation('back') }}
+          </button>
+          <button (click)="toggleEmployeeStatus()" class="btn btn-primary">
+            {{ employee.active ? 'deactivate' : 'activate' }}
+          </button>
+        </div>
+      </div>
 
-  <div *ngIf="!employee" class="row">
-    <div class="col-12">
-      <p>{{ i18nService.getTranslation('loadingEmployeeDetails') }}</p>
+      <div *ngIf="!employee" class="row">
+        <div class="col-12">
+          <p>{{ i18nService.getTranslation('loadingEmployeeDetails') }}</p>
+        </div>
+      </div>
     </div>
   </div>
 </div>

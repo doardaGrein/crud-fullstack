@@ -26,6 +26,8 @@ import { UserFormComponent } from './components/users/user-form/user-form.compon
 import { LoginComponent } from './components/login/login.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { ChangePasswordComponent } from './components/users/change-password/change-password.component';
+import { AboutComponent } from './about/about.component';
+import { ContactComponent } from './contact/contact.component';
 
 @NgModule({
   declarations: [
@@ -47,6 +49,8 @@ import { ChangePasswordComponent } from './components/users/change-password/chan
     LoginComponent,
     DashboardComponent,
     ChangePasswordComponent,
+    AboutComponent,
+    ContactComponent,
   ],
   imports: [
     CommonModule,

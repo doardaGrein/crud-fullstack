@@ -47,7 +47,7 @@
           </li>
           <li class="nav-item">
             <a class="nav-link" routerLink="users/register" aria-label="Sign Up">
-              {{ i18nService.getTranslation('Sing Up') }}
+              {{ i18nService.getTranslation('Sign Up') }}
             </a>
           </li>
           <li class="nav-item">
@@ -98,7 +98,7 @@
             </a>
           </li>
           <li class="nav-item" *ngIf="user.authStatus != 'AUTH'" routerLinkActive="active">
-            <a class="nav-link" routerLink="finances/revenues/form" aria-label="Finances">
+            <a class="nav-link" routerLink="finances/accounting" aria-label="Finances">
               {{ i18nService.getTranslation('Finance') }}
             </a>
           </li>
@@ -128,7 +128,7 @@
 
         <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
           <li class="nav-item" *ngIf="user.authStatus != 'AUTH'" routerLinkActive="active">
-            <a class="nav-link" routerLink="/logout" aria-label="Logout">
+            <a class="nav-link" routerLink="/logout" aria-label="Logout" (click)="logout()">
               {{ i18nService.getTranslation('Logout') }}
             </a>
           </li>

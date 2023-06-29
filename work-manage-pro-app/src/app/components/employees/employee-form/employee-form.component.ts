@@ -51,6 +51,7 @@ export class EmployeeFormComponent implements OnInit {
   onSubmit(): void {
     if (this.employeeForm.valid) {
       const employee: Employee = this.employeeForm.value;
+      alert(JSON.stringify(employee));
       this.employeeService.save(employee).subscribe(
         {
           next: () => {

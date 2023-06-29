@@ -1,51 +1,54 @@
-<div class="container">
-  <h2>
-    {{ i18nService.getTranslation('registerEmployee') }}
-  </h2>
-
-  <form [formGroup]="employeeForm" (ngSubmit)="onSubmit()" class="row">
-
-    <div class="form-group col-sm-6 col-md-4">
-      <label for="name">{{ i18nService.getTranslation('name') }}:</label>
-      <input type="text" id="name" formControlName="name"
-        placeholder="Enter your name" class="form-control">
+<div class="container-fluid">
+  <div class="row mt-lg-5">
+    <div class="main-content text-center mt-lg-5">
+      <h2>
+        {{ i18nService.getTranslation('registerEmployee') }}
+      </h2>
     </div>
+    <form [formGroup]="employeeForm" (ngSubmit)="onSubmit()" class="row">
 
-    <div class="form-group col-sm-6 col-md-4">
-      <label for="email">{{ i18nService.getTranslation('email') }}:</label>
-      <input type="email" id="email" formControlName="email"
-        placeholder="Enter your email address" class="form-control">
-    </div>
+      <div class="form-group col-sm-6 col-md-4">
+        <label for="name">{{ i18nService.getTranslation('name') }}:</label>
+        <input type="text" id="name" formControlName="name"
+               placeholder="Enter your name" class="form-control">
+      </div>
 
-    <div class="form-group col-sm-6 col-md-4">
-      <label for="department">{{ i18nService.getTranslation('department') }}:</label>
-      <input type="text" id="department" formControlName="department"
-        class="form-control"
-        placeholder="Enter your department (ex.: human resources)">
-    </div>
+      <div class="form-group col-sm-6 col-md-4">
+        <label for="email">{{ i18nService.getTranslation('email') }}:</label>
+        <input type="email" id="email" formControlName="email"
+               placeholder="Enter your email address" class="form-control">
+      </div>
 
-    <div class="form-group col-sm-6 col-md-4">
-      <label for="position">{{ i18nService.getTranslation('position') }}:</label>
-      <input type="text" id="position" formControlName="position"
-        placeholder="Enter your position (ex: analyst)" class="form-control">
-    </div>
+      <div class="form-group col-sm-6 col-md-4">
+        <label for="department">{{ i18nService.getTranslation('department') }}:</label>
+        <input type="text" id="department" formControlName="department"
+               class="form-control"
+               placeholder="Enter your department (ex.: human resources)">
+      </div>
 
-    <div class="form-group col-sm-6 col-md-4">
-      <label for="salary">{{ i18nService.getTranslation('salary') }}: </label>
-      <input type="number" id="salary" formControlName="salary"
-        placeholder="Enter your salary " class="form-control">
-    </div>
+      <div class="form-group col-sm-6 col-md-4">
+        <label for="position">{{ i18nService.getTranslation('position') }}:</label>
+        <input type="text" id="position" formControlName="position"
+               placeholder="Enter your position (ex: analyst)" class="form-control">
+      </div>
 
-    <div class="form-group col-sm-6 col-md-4">
-      <label for="age">{{ i18nService.getTranslation('age') }}:</label>
-      <input type="number" id="age" formControlName="age"
-        class="form-control">
-    </div>
+      <div class="form-group col-sm-6 col-md-4">
+        <label for="salary">{{ i18nService.getTranslation('salary') }}: </label>
+        <input type="number" id="salary" formControlName="salary"
+               placeholder="Enter your salary " class="form-control">
+      </div>
 
-    <div class="form-group col-12">
-      <button type="submit" [disabled]="!employeeForm.valid" class="btn btn-info">
-        {{ i18nService.getTranslation('save') }}
-      </button>
-    </div>
-  </form>
+      <div class="form-group col-sm-6 col-md-4">
+        <label for="age">{{ i18nService.getTranslation('age') }}:</label>
+        <input type="number" id="age" formControlName="age"
+               class="form-control">
+      </div>
+
+      <div class="form-group col-12">
+        <button type="submit" [disabled]="!employeeForm.valid" class="btn btn-info">
+          {{ i18nService.getTranslation('save') }}
+        </button>
+      </div>
+    </form>
+  </div>
 </div>

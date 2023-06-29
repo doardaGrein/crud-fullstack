@@ -16,8 +16,12 @@ import { SupplierFormComponent } from './components/suppliers/supplier-form/supp
 import { SupplierListComponent } from './components/suppliers/supplier-list/supplier-list.component';
 import { ChangePasswordComponent } from './components/users/change-password/change-password.component';
 import { UserFormComponent } from './components/users/user-form/user-form.component';
+import {AboutComponent} from "./about/about.component";
+import {ContactComponent} from "./contact/contact.component";
 
 const routes: Routes = [
+  { path: 'about', component: AboutComponent },
+  { path: 'contacts', component: ContactComponent },
 
   { path: 'login', component: LoginComponent },
   { path: 'dashboard', component: DashboardComponent },
