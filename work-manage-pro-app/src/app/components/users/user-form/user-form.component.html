@@ -1,5 +1,9 @@
 <div class="container container-signup">
 
+  <h2 class="text-center" tabindex="0">
+    {{ i18nService.getTranslation('userRegistration') }}
+  </h2>
+
   <form [formGroup]="userForm" (ngSubmit)="onSubmit()" class="row g-3">
 
     <div class="mb-3">
