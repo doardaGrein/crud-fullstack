@@ -27,6 +27,8 @@ public class UserService {
         userEntity.setEmail(userModel.getEmail());
         userEntity.setPassword(userModel.getPassword());
         userEntity.setCreationDate(LocalDateTime.now());
+        userEntity.setActive(true);
+
         // salvar no banco de dados
         UserEntity savedUser = userRepository.save(userEntity);
         // mapeamento dos dados entidade para resquest (dto)

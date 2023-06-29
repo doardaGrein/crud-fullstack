@@ -39,8 +39,12 @@ public class UserEntity {
     private String password;
 
     @CreatedDate
-    @Column(name = "creation_date")
+    @Column(name = "creation_date", nullable = false, columnDefinition = "TIMESTAMP DEFAULT CURRENT_TIMESTAMP")
     private LocalDateTime creationDate;
 
+    @Column(name = "role")
+    private String role;
 
+    @Column(name = "active")
+    private Boolean active;
 }

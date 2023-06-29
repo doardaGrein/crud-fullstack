@@ -22,6 +22,7 @@ export class UserService {
 
   login(email: string, password: string): Observable<boolean> {
     const loginData = { email, password };
+    window.sessionStorage.setItem("userdetails", JSON.stringify(loginData));
     return this.http.post<boolean>(`${this.apiUrl}/login`, loginData);
   }
 

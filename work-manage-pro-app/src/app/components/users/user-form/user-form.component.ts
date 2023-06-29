@@ -1,8 +1,9 @@
-import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { User } from 'src/app/models/user.model';
-import { I18nService } from 'src/app/services/i18n.service';
-import { UserService } from 'src/app/services/user.service';
+import {Component, OnInit} from '@angular/core';
+import {FormBuilder, FormGroup, Validators} from '@angular/forms';
+import {User} from 'src/app/models/user.model';
+import {I18nService} from 'src/app/services/i18n.service';
+import {UserService} from 'src/app/services/user.service';
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-user-form',
@@ -13,11 +14,13 @@ export class UserFormComponent implements OnInit {
 
   userForm: FormGroup;
   currentLanguage: string;
+  model = new User();
 
   constructor(
     private formBuilder: FormBuilder,
     private userService: UserService,
-    public i18nService: I18nService
+    public i18nService: I18nService,
+    public router: Router
   ) {
     this.userForm = this.formBuilder.group({
       name: ['', Validators.required],
@@ -27,10 +30,11 @@ export class UserFormComponent implements OnInit {
     this.currentLanguage = 'TRANSLATIONS_PT';
   }
 
-  ngOnInit(): void { }
+  ngOnInit(): void {
+  }
 
   onSubmit() {
-    if(this.userForm.invalid) {
+    if (this.userForm.invalid) {
       return;
     }
     const user: User = {
@@ -44,11 +48,14 @@ export class UserFormComponent implements OnInit {
     this.userService.createUser(user).subscribe(
       {
         next: (value) => {
-            console.log('Usuário cadastrado com sucesso!', value);
-            this.userForm.reset();
+          this.model = <any>value;
+          window.sessionStorage.setItem("userdetails", JSON.stringify(value));
+          this.model.authStatus = 'AUTH';
+          console.log('Usuário cadastrado com sucesso!', value);
+          this.router.navigate(['/dashboard']);
         },
         error(err) {
-            console.log('Erro ao cadastrar usuário: ', err);
+          console.log('Erro ao cadastrar usuário: ', err);
         },
       }
     );
